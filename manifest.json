@@ -1,0 +1,21 @@
+{
+    "name": "Detalles de mi Tiempo",
+    "description": "Permite llevar un log del tiempo que pasamos usando el navegador",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "src/js/background.js"
+    },
+    "permissions":["identity"],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "src/js/messaging.js",
+                "src/js/startActions.js"
+            ]
+        }
+    ]
+  }
